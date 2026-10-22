@@ -351,3 +351,180 @@ dl dd {
     margin-bottom: 8px;
     color: #475569;
 }
+
+/* ==========================================================================
+   Лабораторна робота №3: Flexbox, Блокова та Адаптивна верстка
+   ========================================================================== */
+
+/* 7. АДАПТИВНА FLEXBOX-СІТКА КАРТОК (Flexbox Grid) */
+.rooms-flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.rooms-flex-grid > .room-card-article {
+    flex: 1 1 calc(33.333% - 16px);
+    min-width: 280px;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.rooms-flex-grid img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+/* 8. БУРГЕР-КНОПКА (Mobile Navigation Toggle) */
+.burger-menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 34px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    z-index: 100;
+}
+
+.burger-menu-btn span {
+    width: 100%;
+    height: 3.5px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Анімація перетворення бургер-іконки на хрестик */
+.burger-menu-btn.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.burger-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu-btn.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   9. МЕДІА-ЗАПИТИ (Media Queries) з логічними операторами
+   ========================================================================== */
+
+/* ДЕСКТОП: роздільна здатність від 1025px */
+@media screen and (min-width: 1025px) {
+    .rooms-flex-grid > .room-card-article {
+        flex: 1 1 calc(33.333% - 16px);
+    }
+}
+
+/* ПЛАНШЕТ: роздільна здатність від 768px до 1024px включно */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    body {
+        padding: 0 20px 30px;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    .rooms-flex-grid > .room-card-article {
+        flex: 1 1 calc(50% - 12px);
+    }
+
+    #booking-form {
+        padding: 20px;
+    }
+}
+
+/* МОБІЛЬНІ ПРИСТРОЇ: роздільна здатність до 767px */
+@media screen and (max-width: 767px) {
+    body {
+        padding: 0 10px 20px;
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.35rem;
+    }
+
+    /* Активація кнопки бургер-меню */
+    .burger-menu-btn {
+        display: flex;
+    }
+
+    /* Мобільна навігація: випадне адаптивне меню */
+    nav > ul.nav-bar-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    nav > ul.nav-bar-list.active {
+        display: flex;
+        animation: slideDown 0.3s ease-out forwards;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .nav-link-item {
+        width: 100%;
+    }
+
+    .nav-link-item a {
+        display: block;
+        width: 100%;
+        padding: 10px 14px;
+    }
+
+    /* Картки в 1 стовпчик на мобільному */
+    .rooms-flex-grid > .room-card-article {
+        flex: 1 1 100%;
+        min-width: 100%;
+    }
+
+    /* Адаптивність форми для вузьких екранів */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="number"],
+    select,
+    textarea {
+        max-width: 100%;
+    }
+
+    /* Горизонтальна прокрутка для таблиці на смартфонах */
+    #pricing-table {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 600px;
+    }
+}
+
