@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250">
+  <rect width="400" height="250" fill="#f0fdf4"/>
+  <rect x="0" y="180" width="400" height="70" fill="#bbf7d0"/>
+  <polygon points="60,180 200,60 340,180" fill="#78350f"/>
+  <polygon points="70,175 200,68 330,175" fill="#92400e"/>
+  <rect x="140" y="120" width="40" height="40" fill="#fef08a"/>
+  <rect x="220" y="120" width="40" height="40" fill="#fef08a"/>
+  <rect x="180" y="140" width="40" height="40" fill="#451a03"/>
+  <text x="20" y="235" font-family="sans-serif" font-size="16" font-weight="bold" fill="#14532d">Гірське шале з терасою (90 м²)</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#bae6fd"/>
+    </linearGradient>
+    <linearGradient id="m1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="m2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#065f46"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#skyGrad)"/>
+  <circle cx="680" cy="90" r="45" fill="#fef08a" opacity="0.9"/>
+  <polygon points="50,400 220,160 380,400" fill="url(#m1)"/>
+  <polygon points="200,190 220,160 250,195 240,210 215,205 195,210" fill="#f8fafc"/>
+  <polygon points="260,400 450,120 640,400" fill="url(#m1)"/>
+  <polygon points="420,160 450,120 490,165 470,180 445,170 420,180" fill="#f8fafc"/>
+  <polygon points="520,400 680,180 820,400" fill="url(#m1)"/>
+  <polygon points="-50,400 150,260 400,400" fill="url(#m2)" opacity="0.9"/>
+  <polygon points="320,400 520,270 780,400" fill="url(#m2)" opacity="0.9"/>
+  <rect x="280" y="290" width="240" height="90" rx="6" fill="#78350f"/>
+  <polygon points="260,290 400,220 540,290" fill="#451a03"/>
+  <rect x="310" y="310" width="40" height="35" rx="3" fill="#fef08a"/>
+  <rect x="380" y="310" width="40" height="35" rx="3" fill="#fef08a"/>
+  <rect x="450" y="310" width="40" height="70" rx="3" fill="#3b82f6"/>
+  <rect x="0" y="370" width="800" height="30" fill="#15803d"/>
+</svg>

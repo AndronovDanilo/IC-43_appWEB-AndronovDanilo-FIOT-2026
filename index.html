@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MandryStay — Платформа онлайн-бронювання готелів, апартаментів та відпочинку в Україні.">
+    <title>MandryStay — Сервіс бронювання відпочинку</title>
+</head>
+<body>
+    <!-- Верхня панель та навігація -->
+    <header>
+        <div id="top-branding">
+            <img src="images/logo.svg" alt="Логотип платформи MandryStay" width="200" height="50" title="MandryStay Travel Portal">
+            <p><em>Сервіс швидкого та безпечного бронювання житла й відпочинку</em></p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#about">Про сервіс</a></li>
+                <li><a href="#booking-form">Пошук та бронювання</a></li>
+                <li><a href="#rooms-catalog">Каталог номерів</a></li>
+                <li><a href="#pricing-table">Тарифна сітка</a></li>
+                <li><a href="#advantages">Переваги</a></li>
+                <li><a href="#faq">Питання та відповіді</a></li>
+                <li><a href="description.html" target="_blank" title="Відкрити опис бізнес-логіки"><strong>Опис предметної галузі та бізнес-логіки</strong></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+        <!-- Головна секція (Hero) -->
+        <section id="about">
+            <h1>Відкрийте для себе найкращий відпочинок разом із MandryStay</h1>
+            <p>
+                Плануєте відпустку в Карпатах, вікенд біля озера чи бізнес-поїздку до старовинного Львова? 
+                <strong>MandryStay</strong> пропонує перевірені готелі, затишні шале та сучасні апартаменти з гарантією найкращої ціни та миттєвим підтвердженням.
+            </p>
+            <figure>
+                <img src="images/hero-carpathians.svg" alt="Панорама гірського курорту MandryStay у Карпатах" width="800" height="400" title="Краєвид Карпатського резорту">
+                <figcaption>Курортний комплекс «MandryStay Bukovel Resort & SPA» у серці українських Карпат</figcaption>
+            </figure>
+        </section>
+
+        <!-- Інтерактивна форма бронювання -->
+        <section id="booking-form">
+            <h2>Онлайн-бронювання номерів</h2>
+            <p>Заповніть форму нижче для розрахунку вартості та оформлення попереднього бронювання:</p>
+
+            <form action="#" method="post">
+                <!-- Блок 1: Параметри поїздки -->
+                <fieldset>
+                    <legend><strong>1. Параметри вашої подорожі</strong></legend>
+
+                    <p>
+                        <label for="dest-city">Місто / Регіон відпочинку: *</label><br>
+                        <input type="text" id="dest-city" name="destination" placeholder="Наприклад: Яремче, Буковель, Львів" required size="40">
+                    </p>
+
+                    <p>
+                        <label for="check-in-date">Дата заїзду (Check-in): *</label>
+                        <input type="date" id="check-in-date" name="check_in" required>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <label for="check-out-date">Дата виїзду (Check-out): *</label>
+                        <input type="date" id="check-out-date" name="check_out" required>
+                    </p>
+
+                    <p>
+                        <label for="adults-count">Кількість дорослих гостей:</label>
+                        <input type="number" id="adults-count" name="adults" min="1" max="10" value="2">
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <label for="children-count">Діти (до 12 років):</label>
+                        <input type="number" id="children-count" name="children" min="0" max="6" value="0">
+                    </p>
+
+                    <p>
+                        <label for="room-category-select">Категорія номера: *</label><br>
+                        <select id="room-category-select" name="room_category" required>
+                            <option value="">-- Оберіть категорію проживання --</option>
+                            <optgroup label="Стандартні номери">
+                                <option value="std-single">Standard Single (1 особа, 18 м²)</option>
+                                <option value="std-twin">Standard Twin/Double (2 особи, 24 м²)</option>
+                            </optgroup>
+                            <optgroup label="Покращені номери та люкси">
+                                <option value="deluxe">Deluxe Panorama Suite (2-3 особи, 45 м²)</option>
+                                <option value="family-suite">Family Duplex Suite (4 особи, 60 м²)</option>
+                            </optgroup>
+                            <optgroup label="Преміум шале">
+                                <option value="chalet">Alpine Chalet з каміном (до 6 осіб, 90 м²)</option>
+                            </optgroup>
+                        </select>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <!-- Блок 2: Додаткові послуги -->
+                <fieldset>
+                    <legend><strong>2. Додаткові опції та харчування</strong></legend>
+                    <p>Оберіть послуги, які ви бажаєте додати до бронювання:</p>
+                    <p>
+                        <input type="checkbox" id="opt-breakfast" name="services" value="breakfast" checked>
+                        <label for="opt-breakfast">Сніданок «Шведська лінія» (+350 грн/доба за особу)</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="opt-spa" name="services" value="spa">
+                        <label for="opt-spa">Безлімітний абонемент у SPA & Thermal Zone (+600 грн/доба)</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="opt-transfer" name="services" value="transfer">
+                        <label for="opt-transfer">Індивідуальний трансфер від залізничного вокзалу (+850 грн)</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="opt-pet" name="services" value="pet_friendly">
+                        <label for="opt-pet">Розміщення з домашньою твариною (+400 грн одноразово)</label>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <!-- Блок 3: Контактні дані гостя -->
+                <fieldset>
+                    <legend><strong>3. Контактні дані замовника</strong></legend>
+                    <p>
+                        <label for="guest-name">Прізвище, Ім'я, По батькові: *</label><br>
+                        <input type="text" id="guest-name" name="full_name" placeholder="Іваненко Іван Іванович" required size="45">
+                    </p>
+                    <p>
+                        <label for="guest-email">Електронна пошта (для підтвердження): *</label><br>
+                        <input type="email" id="guest-email" name="email" placeholder="example@mandrystay.ua" required size="45">
+                    </p>
+                    <p>
+                        <label for="guest-phone">Номер мобільного телефону: *</label><br>
+                        <input type="tel" id="guest-phone" name="phone" placeholder="+38 (067) 123-45-67" required size="25">
+                    </p>
+
+                    <p><strong>Спосіб оплати:</strong></p>
+                    <p>
+                        <input type="radio" id="pay-card" name="payment_method" value="online_card" checked>
+                        <label for="pay-card">Онлайн банківською карткою (Visa / MasterCard / Prostir)</label><br>
+                        <input type="radio" id="pay-cash" name="payment_method" value="upon_arrival">
+                        <label for="pay-cash">Оплата при заїзді на рецепції готелю</label><br>
+                        <input type="radio" id="pay-crypto" name="payment_method" value="apple_google_pay">
+                        <label for="pay-crypto">Apple Pay / Google Pay</label>
+                    </p>
+
+                    <p>
+                        <label for="special-requests">Особливі побажання або коментар до замовлення:</label><br>
+                        <textarea id="special-requests" name="comments" rows="4" cols="55" placeholder="Наприклад: тихий номер, дитяче ліжечко, пізній заїзд після 20:00..."></textarea>
+                    </p>
+
+                    <p>
+                        <input type="checkbox" id="agree-terms" name="terms" required>
+                        <label for="agree-terms">Я ознайомлений(-а) та погоджуюся з <a href="#faq">правилами бронювання</a> та політикою конфіденційності *</label>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <p>
+                    <button type="submit"><strong>Забронювати номер зараз</strong></button>
+                    &nbsp;&nbsp;
+                    <button type="reset">Очистити форму</button>
+                </p>
+            </form>
+        </section>
+
+        <!-- Каталог номерів із фотографіями -->
+        <section id="rooms-catalog">
+            <h2>Популярні категорії розміщення</h2>
+            <p>Оберіть найкращий номер для індивідуального, сімейного або корпоративного відпочинку:</p>
+
+            <article>
+                <h3>1. Номер категорії «Стандарт»</h3>
+                <img src="images/room-standard.svg" alt="Затишний двомісний номер категорії Стандарт" width="380" height="235" title="Standard Room">
+                <p>
+                    Ідеальний вибір для мандрівників соло або пар. Затишна кімната площею 22–24 м² з двоспальним ліжком King Size, 
+                    власною ванною кімнатою, швидкісним Wi-Fi, робочим столом та балконом із видом на паркову зону.
+                </p>
+            </article>
+
+            <article>
+                <h3>2. Панорамний «Люкс» (Deluxe Panorama Suite)</h3>
+                <img src="images/room-deluxe.svg" alt="Просторий люкс-номер із терасою та панорамними вікнами" width="380" height="235" title="Deluxe Suite">
+                <p>
+                    Просторий двокімнатний номер преміум-класу площею 45 м² з панорамними вікнами на гори. 
+                    Окрема зона вітальні, кавомашина, міні-бар, халати, ортопедичний матрац та безкоштовний доступ до SPA-комплексу.
+                </p>
+            </article>
+
+            <article>
+                <h3>3. Автентичне «Альпійське шале»</h3>
+                <img src="images/room-chalet.svg" alt="Двоповерхове еко-шале з натурального дерева з каміном" width="380" height="235" title="Alpine Chalet">
+                <p>
+                    Відокремлений котедж із карпатського бруса площею 90 м² для сім'ї або компанії до 6 осіб. 
+                    Власний дров'яний камін, простора тераса з барбекю, повністю обладнана кухня та сауна.
+                </p>
+            </article>
+        </section>
+
+        <!-- Таблиця тарифів та характеристик -->
+        <section id="pricing-table">
+            <h2>Тарифна сітка та порівняння номерів</h2>
+            <p>Детальна порівняльна таблиця номерного фонду готелю на сезон 2026/2027 року:</p>
+
+            <table border="1" cellpadding="8" cellspacing="0">
+                <caption><strong>Таблиця 1.1 — Порівняльна характеристика категорій номерів та цін у MandryStay</strong></caption>
+                <thead>
+                    <tr>
+                        <th scope="col" rowspan="2">Категорія номера</th>
+                        <th scope="col" rowspan="2">Площа (м²)</th>
+                        <th scope="col" rowspan="2">Місткість</th>
+                        <th scope="col" colspan="3">Включені послуги</th>
+                        <th scope="col" rowspan="2">Ціна за добу (UAH)</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">Wi-Fi</th>
+                        <th scope="col">Сніданок</th>
+                        <th scope="col">SPA-зона</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Standard Single</th>
+                        <td align="center">18</td>
+                        <td align="center">1 особа</td>
+                        <td align="center">&#10004; Так</td>
+                        <td align="center">&#10006; За доплату</td>
+                        <td align="center">&#10006; Ні</td>
+                        <td align="right"><strong>1 450 грн</strong></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Standard Twin / Double</th>
+                        <td align="center">24</td>
+                        <td align="center">2 особи</td>
+                        <td align="center">&#10004; Так</td>
+                        <td align="center">&#10004; Включено</td>
+                        <td align="center">&#10006; За доплату</td>
+                        <td align="right"><strong>2 200 грн</strong></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Deluxe Panorama Suite</th>
+                        <td align="center">45</td>
+                        <td align="center">2 + 1 дитина</td>
+                        <td align="center">&#10004; Так</td>
+                        <td align="center">&#10004; Включено</td>
+                        <td align="center">&#10004; Включено</td>
+                        <td align="right"><strong>4 100 грн</strong></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Family Duplex Suite</th>
+                        <td align="center">60</td>
+                        <td align="center">4 особи</td>
+                        <td align="center">&#10004; Так</td>
+                        <td align="center">&#10004; Включено</td>
+                        <td align="center">&#10004; Включено</td>
+                        <td align="right"><strong>5 600 грн</strong></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Alpine Chalet з каміном</th>
+                        <td align="center">90</td>
+                        <td align="center">до 6 осіб</td>
+                        <td align="center">&#10004; Так</td>
+                        <td align="center">&#10004; Включено</td>
+                        <td align="center">&#10004; Безліміт</td>
+                        <td align="right"><strong>8 900 грн</strong></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="6" align="right"><strong>Середня вартість проживання за добу:</strong></td>
+                        <td align="right"><strong>4 450 грн</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <!-- Списки (різноманітні типи списків за вимогами ЛР1) -->
+        <section id="advantages">
+            <h2>Чому обирають платформу MandryStay</h2>
+
+            <!-- Маркований список -->
+            <h3>Наші ключові переваги (маркований список):</h3>
+            <ul>
+                <li>Миттєве підтвердження броні без очікування дзвінка адміністратора;</li>
+                <li>Найкраща ціна напряму від готелів без додаткових прихованих комісій;</li>
+                <li>Цілодобова україномовна служба клієнтської підтримки 24/7;</li>
+                <li>Гнучкі умови скасування бронювання та повернення коштів;</li>
+                <li>Реальні верифіковані відгуки гостей із фотографіями;</li>
+                <li>Програма лояльності «MandryClub» із накопичувальними бонусами до 15%.</li>
+            </ul>
+
+            <!-- Нумерований список -->
+            <h3>Етапи онлайн-бронювання житла (нумерований список):</h3>
+            <ol>
+                <li>Введення напрямку та дат подорожі у пошукову форму;</li>
+                <li>Вибір найкращої категорії номера згідно з вашими уподобаннями;</li>
+                <li>Додавання бажаних опцій (харчування, SPA, трансфер);</li>
+                <li>Заповнення контактної інформації гостя;</li>
+                <li>Оплата замовлення або вибір розрахунку на рецепції;</li>
+                <li>Отримання електронного ваучера з QR-кодом для швидкого заселення на email.</li>
+            </ol>
+
+            <!-- Вкладений список -->
+            <h3>Правила перебування та умови скасування (багаторівневий список):</h3>
+            <ol>
+                <li>
+                    <strong>Час реєстрації та виїзду:</strong>
+                    <ul>
+                        <li>Заїзд (Check-in): з 14:00 до 23:00;</li>
+                        <li>Виїзд (Check-out): до 12:00 за місцевим часом;</li>
+                        <li>Ранній заїзд / пізній виїзд надаються за попереднім запитом за наявності вільних номерів.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Політика анулювання:</strong>
+                    <ul>
+                        <li>Безкоштовне скасування бронювання за 48 годин до дати заїзду;</li>
+                        <li>При скасуванні менш ніж за 48 годин утримується вартість першої доби проживання;</li>
+                        <li>Спеціальні незворотні тарифи (Non-refundable) поверненню не підлягають.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <!-- Список визначень -->
+            <h3 id="faq">Терміни та визначення (список визначень dl/dt/dd):</h3>
+            <dl>
+                <dt><strong>Check-in (Заїзд)</strong></dt>
+                <dd>Процедура оформлення та реєстрації гостя на рецепції готелю з видачею електронних ключів від номера.</dd>
+
+                <dt><strong>Check-out (Виїзд)</strong></dt>
+                <dd>Процес звільнення номера, остаточного розрахунку за додаткові послуги та повернення ключів адміністрації.</dd>
+
+                <dt><strong>Туристичний збір (City Tax)</strong></dt>
+                <dd>Місцевий податок, визначений законодавством України, кошти від якого надходять до бюджету місцевої громади.</dd>
+
+                <dt><strong>Електронний ваучер (Booking Confirmation)</strong></dt>
+                <dd>Офіційний цифровий документ із номером броні, що підтверджує резервацію номера за вказаним тарифом.</dd>
+            </dl>
+        </section>
+    </main>
+
+    <hr>
+
+    <!-- Підвал сторінки -->
+    <footer>
+        <address>
+            <p><strong>Контактна інформація платформи MandryStay:</strong></p>
+            <p>Адреса головного офісу: Україна, м. Київ, вул. Політехнічна, 16</p>
+            <p>Телефон гарячої лінії: <a href="tel:+380441234567">+38 (044) 123-45-67</a></p>
+            <p>Email підтримки: <a href="mailto:support@mandrystay.ua">support@mandrystay.ua</a></p>
+        </address>
+        <p>&copy; 2026 MandryStay. Усі права захищено. Автор проєкту: студент групи ІС-43 Андронов Данило.</p>
+        <p><a href="#top-branding">Вгору сторінки &#8593;</a></p>
+    </footer>
+</body>
+</html>
