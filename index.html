@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="MandryStay — Платформа онлайн-бронювання готелів, апартаментів та відпочинку в Україні.">
     <title>MandryStay — Сервіс бронювання відпочинку</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Верхня панель та навігація -->
@@ -15,14 +16,15 @@
         </div>
 
         <nav>
-            <ul>
-                <li><a href="#about">Про сервіс</a></li>
-                <li><a href="#booking-form">Пошук та бронювання</a></li>
-                <li><a href="#rooms-catalog">Каталог номерів</a></li>
-                <li><a href="#pricing-table">Тарифна сітка</a></li>
-                <li><a href="#advantages">Переваги</a></li>
-                <li><a href="#faq">Питання та відповіді</a></li>
-                <li><a href="description.html" target="_blank" title="Відкрити опис бізнес-логіки"><strong>Опис предметної галузі та бізнес-логіки</strong></a></li>
+            <ul class="nav-bar-list">
+                <li class="nav-link-item"><a href="#about">Про сервіс</a></li>
+                <li class="nav-link-item"><a href="#booking-form">Пошук та бронювання</a></li>
+                <li class="nav-link-item"><a href="#rooms-catalog">Каталог номерів</a></li>
+                <li class="nav-link-item"><a href="#pricing-table">Тарифна сітка</a></li>
+                <li class="nav-link-item"><a href="#advantages">Переваги</a></li>
+                <li class="nav-link-item"><a href="#faq">Питання та відповіді</a></li>
+                <li class="nav-link-item"><a href="resume.html" target="_blank" title="Резюме розробника">Резюме розробника</a></li>
+                <li class="nav-link-item"><a href="description.html" target="_blank" title="Відкрити опис бізнес-логіки"><strong>Опис предметної галузі та бізнес-логіки</strong></a></li>
             </ul>
         </nav>
     </header>
@@ -163,9 +165,9 @@
                 <br>
 
                 <p>
-                    <button type="submit"><strong>Забронювати номер зараз</strong></button>
+                    <button type="submit" class="btn-primary-action"><strong>Забронювати номер зараз</strong></button>
                     &nbsp;&nbsp;
-                    <button type="reset">Очистити форму</button>
+                    <button type="reset" class="btn-reset-action">Очистити форму</button>
                 </p>
             </form>
         </section>
@@ -175,7 +177,7 @@
             <h2>Популярні категорії розміщення</h2>
             <p>Оберіть найкращий номер для індивідуального, сімейного або корпоративного відпочинку:</p>
 
-            <article>
+            <article class="room-card-article">
                 <h3>1. Номер категорії «Стандарт»</h3>
                 <img src="images/room-standard.svg" alt="Затишний двомісний номер категорії Стандарт" width="380" height="235" title="Standard Room">
                 <p>
@@ -184,7 +186,7 @@
                 </p>
             </article>
 
-            <article>
+            <article class="room-card-article">
                 <h3>2. Панорамний «Люкс» (Deluxe Panorama Suite)</h3>
                 <img src="images/room-deluxe.svg" alt="Просторий люкс-номер із терасою та панорамними вікнами" width="380" height="235" title="Deluxe Suite">
                 <p>
@@ -193,7 +195,7 @@
                 </p>
             </article>
 
-            <article>
+            <article class="room-card-article">
                 <h3>3. Автентичне «Альпійське шале»</h3>
                 <img src="images/room-chalet.svg" alt="Двоповерхове еко-шале з натурального дерева з каміном" width="380" height="235" title="Alpine Chalet">
                 <p>
