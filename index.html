@@ -6,6 +6,7 @@
     <meta name="description" content="MandryStay — Платформа онлайн-бронювання готелів, апартаментів та відпочинку в Україні.">
     <title>MandryStay — Сервіс бронювання відпочинку</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth-modal.css">
 </head>
 <body>
     <!-- Верхня панель та навігація -->
@@ -13,11 +14,14 @@
         <div id="top-branding">
             <img src="images/logo.svg" alt="Логотип платформи MandryStay" width="200" height="50" title="MandryStay Travel Portal">
             <p><em>Сервіс швидкого та безпечного бронювання житла й відпочинку</em></p>
-            <button class="burger-menu-btn" id="burger-btn" aria-label="Відкрити меню навігації">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="header-auth-controls">
+                <button type="button" id="open-auth-modal-btn" class="btn-header-auth">Увійти</button>
+                <button class="burger-menu-btn" id="burger-btn" aria-label="Відкрити меню навігації">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
 
         <nav>
@@ -368,7 +372,55 @@
         <p><a href="#top-branding">Вгору сторінки &#8593;</a></p>
     </footer>
 
-    <!-- Скрипт адаптивного бургер-меню -->
+    <!-- Модальне вікно авторизації MandryStay (ЛР №4, Завдання №10) -->
+    <div id="auth-modal-overlay" class="auth-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title" hidden>
+        <div class="auth-modal-dialog">
+            <div class="auth-modal-header">
+                <div class="auth-modal-title-group">
+                    <span class="auth-modal-badge">MandryStay Account</span>
+                    <h2 id="auth-modal-title">Вхід до особистого кабінету</h2>
+                </div>
+                <button type="button" id="auth-modal-close" class="auth-modal-close" aria-label="Закрити вікно авторизації">&times;</button>
+            </div>
+
+            <div class="auth-modal-body">
+                <div class="auth-demo-hint">
+                    <span>Демо-дані: <strong>demo@mandrystay.ua</strong> / <strong>mandry2026</strong></span>
+                    <button type="button" id="auth-fill-demo-btn" class="btn-fill-demo">Підставити</button>
+                </div>
+
+                <form id="auth-modal-form" novalidate>
+                    <div class="auth-form-field">
+                        <label for="auth-identifier">Email або логін <span class="auth-required">*</span></label>
+                        <input type="text" id="auth-identifier" name="identifier" placeholder="demo@mandrystay.ua або логін (мін. 3 символи)" autocomplete="username">
+                        <span class="auth-field-error" id="auth-err-identifier" role="alert"></span>
+                    </div>
+
+                    <div class="auth-form-field">
+                        <label for="auth-password">Пароль <span class="auth-required">*</span></label>
+                        <div class="auth-input-wrap">
+                            <input type="password" id="auth-password" name="password" class="has-toggle" placeholder="Мінімум 6 символів" autocomplete="current-password">
+                            <button type="button" id="auth-toggle-password" class="btn-toggle-password">Показати</button>
+                        </div>
+                        <span class="auth-field-error" id="auth-err-password" role="alert"></span>
+                    </div>
+
+                    <div class="auth-remember-row">
+                        <label class="auth-remember-label">
+                            <input type="checkbox" id="auth-remember" name="remember">
+                            Запам’ятати мене
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-auth-submit">Увійти в MandryStay</button>
+                    <div id="auth-modal-status" class="auth-modal-status" role="status" aria-live="polite"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Скрипт адаптивного бургер-меню та вікна авторизації -->
     <script src="js/main.js"></script>
+    <script src="js/auth-modal.js"></script>
 </body>
 </html>

@@ -1,0 +1,313 @@
+/* ==========================================================================
+   MandryStay — Вікно авторизації (Лабораторна робота №4, Завдання №10)
+   Дизайн-система: #1E3A8A (primary), #0284C7 (accent), #0F172A (dark), Inter
+   ========================================================================== */
+
+.header-auth-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-header-auth {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: 8px;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-header-auth:hover {
+  background-color: #38bdf8;
+  border-color: #38bdf8;
+  color: #0f172a;
+}
+
+.btn-header-auth.is-authenticated {
+  background-color: #0284c7;
+  border-color: #7dd3fc;
+  color: #ffffff;
+}
+
+.auth-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background-color: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+.auth-modal-overlay[hidden] {
+  display: none;
+}
+
+.auth-modal-dialog {
+  width: 100%;
+  max-width: 440px;
+  background-color: #ffffff;
+  color: #1e293b;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.35);
+  overflow: hidden;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  animation: authModalSlideIn 0.2s ease-out;
+}
+
+@keyframes authModalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.auth-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #0284c7 100%);
+  color: #ffffff;
+}
+
+.auth-modal-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.auth-modal-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #7dd3fc;
+}
+
+.auth-modal-header h2 {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.auth-modal-close {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.auth-modal-close:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.auth-modal-body {
+  padding: 22px;
+}
+
+.auth-demo-hint {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  background-color: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #0c4a6e;
+}
+
+.btn-fill-demo {
+  flex-shrink: 0;
+  padding: 5px 10px;
+  background-color: #0284c7;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-fill-demo:hover {
+  background-color: #0369a1;
+}
+
+.auth-form-field {
+  margin-bottom: 14px;
+}
+
+.auth-form-field label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.auth-required {
+  color: #dc2626;
+}
+
+.auth-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.auth-form-field input[type="text"],
+.auth-form-field input[type="password"] {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0f172a;
+  background-color: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-form-field input.has-toggle {
+  padding-right: 78px;
+}
+
+.auth-form-field input:focus {
+  outline: none;
+  border-color: #0284c7;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
+}
+
+.auth-form-field input.is-invalid {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.auth-form-field input.is-valid {
+  border-color: #16a34a;
+}
+
+.btn-toggle-password {
+  position: absolute;
+  right: 8px;
+  padding: 4px 8px;
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-toggle-password:hover {
+  background: #e2e8f0;
+}
+
+.auth-field-error {
+  display: block;
+  min-height: 18px;
+  margin-top: 4px;
+  font-size: 12.5px;
+  color: #dc2626;
+}
+
+.auth-remember-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 13.5px;
+  color: #475569;
+}
+
+.auth-remember-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.btn-auth-submit {
+  width: 100%;
+  padding: 11px 18px;
+  background: linear-gradient(135deg, #1e3a8a 0%, #0284c7 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.btn-auth-submit:hover {
+  opacity: 0.94;
+}
+
+.btn-auth-submit:active {
+  transform: translateY(1px);
+}
+
+.auth-modal-status {
+  display: none;
+  margin-top: 14px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.auth-modal-status.is-visible {
+  display: block;
+}
+
+.auth-modal-status.is-error {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.auth-modal-status.is-success {
+  background-color: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+@media screen and (max-width: 767px) {
+  .auth-demo-hint {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
