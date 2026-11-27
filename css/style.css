@@ -29,6 +29,16 @@ header {
     margin-bottom: 30px;
 }
 
+header p,
+header em,
+#top-branding p {
+    color: #e2e8f0;
+}
+
+#top-branding p {
+    margin-bottom: 0;
+}
+
 h1 {
     font-size: 2.2rem;
     font-weight: 800;
