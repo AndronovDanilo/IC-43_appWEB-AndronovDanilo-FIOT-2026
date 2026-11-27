@@ -242,22 +242,6 @@
   color: #dc2626;
 }
 
-.auth-remember-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
-  font-size: 13.5px;
-  color: #475569;
-}
-
-.auth-remember-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-}
-
 .btn-auth-submit {
   width: 100%;
   padding: 11px 18px;
